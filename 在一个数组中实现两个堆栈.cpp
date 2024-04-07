@@ -1,25 +1,12 @@
 //
 // Created by 86130 on 2024/4/7.
 //
-
-Stack CreateStack( int MaxSize );
-bool Push( Stack S, ElementType X, int Tag );
-ElementType Pop( Stack S, int Tag );
-typedef int Position;
-struct SNode {
-    ElementType *Data;
-    Position Top1, Top2;
-    int MaxSize;
-};
-typedef struct SNode *Stack;
-
 #include <stdio.h>
 #include <stdlib.h>
 
 #define ERROR 1e8
 typedef int ElementType;
 typedef enum { push, pop, end } Operation;
-typedef enum { false, true } bool;
 typedef int Position;
 struct SNode {
     ElementType *Data;
@@ -34,6 +21,14 @@ ElementType Pop( Stack S, int Tag );
 
 Operation GetOp();  /* details omitted */
 void PrintStack( Stack S, int Tag ); /* details omitted */
+
+
+Stack CreateStack( int MaxSize );
+bool Push( Stack S, ElementType X, int Tag );
+ElementType Pop( Stack S, int Tag );
+typedef int Position;
+
+typedef struct SNode *Stack;
 
 int main()
 {
